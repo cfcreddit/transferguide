@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chelsea FC Transfer Reliability Guide</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <img class="crest" src="cfc_crest.svg" alt="CFC Crest" />
+
+    <h1>Chelsea FC Transfer Reliability Guide</h1>
+    <p>
+      Below are the rankings for various sources based on their reliability in
+      reporting Chelsea FC transfer rumors.
+    </p>
+    <div class="header">
+      <!-- Search bar -->
+      <div class="input-container">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search for sources.."
+        />
+      </div>
+    </div>
+
+    <!-- Tier 1: Reliable Sources -->
+    <h2>Tier 1: Reliable Sources</h2>
+    <ul id="tier1" class="card">
+      <!-- List items will be added dynamically using JavaScript -->
+    </ul>
+
+    <!-- Tier 2: Mostly Reliable Sources -->
+    <h2>Tier 2: Mostly Reliable Sources</h2>
+    <ul id="tier2" class="card">
+      <!-- List items will be added dynamically using JavaScript -->
+    </ul>
+
+    <!-- Tier 3: Mostly Unreliable Sources -->
+    <h2>Tier 3: Mostly Unreliable Sources</h2>
+    <ul id="tier3" class="card">
+      <!-- List items will be added dynamically using JavaScript -->
+    </ul>
+
+    <!-- Tier 4: Unreliable Sources -->
+    <h2>Tier 4: Unreliable Sources</h2>
+    <ul id="tier4" class="card">
+      <!-- List items will be added dynamically using JavaScript -->
+    </ul>
+
+    <script>
+      // Function to search for sources
+      function searchSources() {
+        const input = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+
+        const lists = document.querySelectorAll("ul");
+        lists.forEach((list) => {
+          const sources = list.getElementsByTagName("li");
+          for (let i = 0; i < sources.length; i++) {
+            const source = sources[i].innerText.toLowerCase();
+            if (source.includes(input)) {
+              sources[i].style.display = "block";
+            } else {
+              sources[i].style.display = "none";
+            }
+          }
+        });
+      }
+
+      // Function to add sources to their respective tiers
+      function addSources() {
+        const tier1Sources = [
+          "BBC, UK",
+          "Kristof Terreur, BE",
+          "'Quaker Boy' (Galatasaray)",
+          "Craig Hope (Newcastle Utd)",
+          "Melchor Ruiz (Real Madrid)",
+          "RTP1, PT",
+          "Dom Fifield (The Athletic, UK)",
+          "Matt Law (Telegraph, UK)",
+          "Adam Blackmore (Soton)",
+          "Craig Norwood (Man. Utd)",
+          "Melissa Reddy (Liverpool)",
+          "Ruhr Nachrichten, DE",
+          "Fabrizio Romano",
+          "Mohammed Bouhafsi (RMC Sport, FR)",
+          "Alasdair Gold (Spurs)",
+          "David Ornstein (BBC, UK)",
+          "Mike Verweij (De Telegraaf, NL)",
+          "Simon Peach (Man. Utd)",
+          "Gianluca di Marzio, IT",
+          "RMC Sport, FR",
+          "Antonio Ruiz (Atletico Madrid)",
+          "Edu Polo (Mundo Deportivo, ES)",
+          "Paul Joyce (The Times, UK)",
+          "Simon Stone (BBC, UK)",
+          "James Ducker (Telegraph, UK)",
+          "The Athletic, UK",
+          "Antonio Vitiello (AC Milan)",
+          "Frank Lussem (Kicker, DE)",
+          "PSG United (PSG)",
+          "Sky Italia, IT",
+          "Arancha Rodriguez (Real Madrid)",
+          "Freek Jansen (Ajax)",
+          "RAC1, ES",
+          "Stephan von Nocks (Kicker, DE)",
+          "Ben Pearce (Spurs)",
+          "George Caulkin (Newcastle Utd)",
+          "rerererarara.net, TR",
+          "Carlo Alvino (Napoli)",
+          "Hugo Guillemet (Lyon)",
+          "Reviersport (Schalke)",
+          "Charles Watts (Arsenal)",
+          "James Pearce (Liverpool)",
+          "Rik Elfrink (PSV)",
+          "CMVM.pt, PT",
+          "Jose Luis Sanchez (Real Madrid)",
+          "Romeo Agresti, IT",
+          /* Add Tier 1 sources here */
+        ];
+        const tier2Sources = [
+          "Adam Newson (Football LDN)",
+          "Kicker, DE",
+          "aBola, PT",
+          "Der Westen",
+          "Lee Ryder (Newcastle Utd)",
+          "Radio Renascenca, PT",
+          "Ben Jacobs",
+          "L'Equipe, FR",
+          "Ahmet Ercanlar (Fenerbahce)",
+          "Ed Aarons (Spurs)",
+          "Leverkusener Anzeiger (B. Leverkusen)",
+          "Raphael Honigstein",
+          "BILD, DE",
+          "Matt Barlow (Daily Mail, UK)",
+          "Alfredo Pedulla, IT",
+          "@ExWHUEmployee (West Ham)",
+          "LigTv, TR",
+          "Record, PT",
+          "Cadena SER, ES",
+          "Nathan Gissing",
+          "Amy Lawrence (Arsenal)",
+          "Gerard Romero",
+          "Lyall Thomas (Spurs)",
+          "Richard Keys",
+          "Canal+, FR",
+          "Nizaar Kinsella",
+          "Andy Burton",
+          "Globoesporte, BR",
+          "Mark Ogden",
+          "RTL, FR",
+          "COPE, ES",
+          "Sami Mokbel (Daily Mail, UK)",
+          "BeIN, TR",
+          "Henry Winter",
+          "Martin Blackburn (Man City)",
+          "Sport1, DE",
+          "ItalianFootballTV",
+          "Mohamed Bouhafsi (RMC Sport, FR)",
+          "SportItalia, IT",
+          "Jason Burt (Telegraph, UK)",
+          "Neil Jones (Goal, UK)",
+          "Telegraph, UK",
+          "Jonathan Johnson",
+          "Nicolò Schira, IT",
+          "TuttoMercatoWeb, IT",
+          "Jornal de Noticias, PT",
+          "Pete O'Rourke",
+          "Turkish Football",
+          "Juanfe Sanz (COPE, ES)",
+          "Pete Graves",
+          "Vito Angele, IT",
+          /* Add Tier 2 sources here */
+        ];
+        const tier3Sources = [
+          "@CheGiaevera",
+          "Marca, ES",
+          "Andy Mitten",
+          "Kevin Palmer",
+          "AS, ES",
+          "Mundo Deportivo, ES",
+          "A Bola, PT",
+          "Duncan Wright (The Sun, UK)",
+          "La Voz de Galicia, ES",
+          "BetisBlog",
+          "Eurosport, UK",
+          "Le 10 Sport, FR",
+          "SportBild, DE",
+          "Cadena Cope, ES",
+          "Fanatik, TR",
+          "L'Equipe",
+          "Superdeporte, ES",
+          "Chiringuito (El Chiringuito TV, ES)",
+          "Fussball Transfers, DE",
+          "Loïc Tanzi (RMC Sport, FR)",
+          "TeamTalk",
+          "Duncan Castles",
+          "Louise Taylor (The Guardian, UK)",
+          "TNT Brasil, BR",
+          "Emanuele Giulianelli",
+          "Luis Izquierdo (El Desmarque, ES)",
+          "TNT Sports, BR",
+          "ESPN Brazil, BR",
+          "Manuel Veth (Transfermarkt)",
+          "Transfer Tavern",
+          "ESPN, UK",
+          "Matteo Pedrosi (MilanNews, IT)",
+          "TSN, CA",
+          "Euro United, IT",
+          "Metro, UK",
+          "West London Sport",
+          "Extra Time, FR",
+          "Mirror, UK",
+          "Whoscored",
+          "Fanatik, TR",
+          "NBC Sports, USA",
+          "Wilson Perumal & Company",
+          "Flamengo, BR",
+          "Nieuwsblad, BE",
+          "Yahoo! Sports, USA",
+          "Football Fan Cast",
+          "NorwegianFootball",
+          "Zero Hora, BR",
+          "Futbol Arena, TR",
+          "O Jogo, PT",
+          "Duncan Wright (The Sun, UK)",
+          "Gazzetta dello Sport, IT",
+          "Paul Hirst (The Times, UK)",
+          "Eintracht Frankfurt, DE",
+          "Gazeta Esportiva, BR",
+          "Romanian Football, RO",
+          /* Add Tier 3 sources here */
+        ];
+        const tier4Sources = [
+          "@CarefreeYouth",
+          "FootballWhispers",
+          "Diario Gol, ES",
+          "90min",
+          "Goal.com",
+          "Caught Offside",
+          "Sports Witness",
+          "Corriere dello Sport, IT",
+          "Silly Season",
+          "Daily Express, UK",
+          "TBR Football",
+          "Dynamo Kiev, UA",
+          "Leicester Mercury",
+          "Team News",
+          "Evening Standard, UK",
+          "Leicester City Mercury",
+          "The Hammers News",
+          "Express & Star",
+          "LeicestershireLive",
+          "The Peoples Person",
+          "Fanatik, TR",
+          "Liverpool Echo",
+          "The Sun, UK",
+          "Fantasy Football Scout",
+          "London Evening Standard",
+          "The72",
+          "Fantasy Football Tips",
+          "NottinghamshireLive",
+          "WalesOnline",
+          "FirstPost",
+          "OneFootball",
+          "WATP.com",
+          "Football Fan Base",
+          "RedCafe.net",
+          "WrestlingNews.co",
+          "Football Insider",
+          "Squawka",
+          "Zsport.az, AZ",
+          "Football.London",
+          "Standard Sport",
+          "ZZ10.net, AR",
+          "Football365",
+          "Sport Witness",
+          "Zamalek Fans, EG",
+          "ForzaItalianFootball",
+          "Sporting Life",
+          "ZDF, DE",
+          "Fotomac, TR",
+          "Sports Mole",
+          "360, TR",
+          "FourFourTwo",
+          "Sportslens",
+          "Daily Record, UK",
+          "FRANCE Football",
+          "SportX, BR",
+          "Danske Harian, DK",
+          "Freelance Journalist",
+          "Sport, ES",
+          "DAZN, BR",
+          "Get French Football News",
+          "Sport1, DE",
+          "De Telegraaf, NL",
+          "Haber Global, TR",
+          "Sport24, GR",
+          "Defensa Central, ES",
+          "Hail Redknapp",
+          "SportingNews.com",
+          "DerbyshireLive",
+          "HITC",
+          "SportingPedia",
+          "Eagle-eyed Edits",
+          "Hull Daily Mail",
+          "Sportskeeda",
+          "Everything Leeds",
+          "Inside Futbol",
+          "Sportslens",
+          "Get French Football News",
+          /* Add Tier 4 sources here */
+        ];
+
+        addSourcesToTier("tier1", tier1Sources);
+        addSourcesToTier("tier2", tier2Sources);
+        addSourcesToTier("tier3", tier3Sources);
+        addSourcesToTier("tier4", tier4Sources);
+      }
+
+      // Function to add sources to their respective tiers
+      function addSourcesToTier(tierId, sources) {
+        const tierList = document.getElementById(tierId);
+        sources.forEach((source) => {
+          const existingSources = Array.from(
+            tierList.getElementsByTagName("li")
+          );
+          const sourceText = source.toLowerCase();
+          const alreadyExists = existingSources.some(
+            (li) => li.textContent.toLowerCase() === sourceText
+          );
+          if (!alreadyExists) {
+            const li = document.createElement("li");
+            li.textContent = source;
+            tierList.appendChild(li);
+          }
+        });
+      }
+
+      // Add event listener to the search input
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", searchSources);
+
+      // Load sources from local storage
+      window.addEventListener("load", function () {
+        const savedTier1 = localStorage.getItem("tier1");
+        const savedTier2 = localStorage.getItem("tier2");
+        const savedTier3 = localStorage.getItem("tier3");
+        const savedTier4 = localStorage.getItem("tier4");
+
+        if (savedTier1) {
+          addSourcesToTier("tier1", JSON.parse(savedTier1));
+        }
+
+        if (savedTier2) {
+          addSourcesToTier("tier2", JSON.parse(savedTier2));
+        }
+
+        if (savedTier3) {
+          addSourcesToTier("tier3", JSON.parse(savedTier3));
+        }
+
+        if (savedTier4) {
+          addSourcesToTier("tier4", JSON.parse(savedTier4));
+        }
+
+        addSources();
+      });
+
+      // Save sources to local storage when the user leaves the page
+      window.addEventListener("beforeunload", function () {
+        const tier1Sources = Array.from(
+          document.getElementById("tier1").getElementsByTagName("li")
+        );
+        const tier2Sources = Array.from(
+          document.getElementById("tier2").getElementsByTagName("li")
+        );
+        const tier3Sources = Array.from(
+          document.getElementById("tier3").getElementsByTagName("li")
+        );
+        const tier4Sources = Array.from(
+          document.getElementById("tier4").getElementsByTagName("li")
+        );
+
+        const tier1SourceTexts = tier1Sources.map((li) => li.textContent);
+        const tier2SourceTexts = tier2Sources.map((li) => li.textContent);
+        const tier3SourceTexts = tier3Sources.map((li) => li.textContent);
+        const tier4SourceTexts = tier4Sources.map((li) => li.textContent);
+
+        localStorage.setItem("tier1", JSON.stringify(tier1SourceTexts));
+        localStorage.setItem("tier2", JSON.stringify(tier2SourceTexts));
+        localStorage.setItem("tier3", JSON.stringify(tier3SourceTexts));
+        localStorage.setItem("tier4", JSON.stringify(tier4SourceTexts));
+      });
+    </script>
+  </body>
+</html>

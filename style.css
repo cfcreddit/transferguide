@@ -1,0 +1,110 @@
+body {
+  background-color: #034694;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+
+h1 {
+  margin-top: 40px;
+}
+
+p {
+  margin-bottom: 40px;
+}
+
+/* Search bar styling */
+.input-container {
+  display: inline-block;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+input[type="text"] {
+  width: 50vw; /* Set width to 50% of viewport width */
+  height: 30px;
+  font-size: large;
+  text-align: center;
+  padding: 10px 20px;
+  border: none;
+  background-color: #fff;
+  transition: width 0.5s ease-in-out;
+}
+
+input[type="text"]:focus {
+  width: 70vw; /* Set width to 70% of viewport width when focused */
+}
+
+/* Tiered columns */
+ul {
+  list-style: none;
+  padding: 0;
+  /* Add column layout */
+  column-count: 3;
+  column-gap: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #022853;
+  color: white;
+}
+
+ul li::before {
+  content: none;
+}
+
+.card {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* Tier 1: Reliable Sources */
+#tier1 li {
+  border: 7px solid green;
+}
+
+/* Tier 2: Mostly Reliable Sources */
+#tier2 li {
+  border: 7px solid yellow;
+}
+
+/* Tier 3: Mostly Unreliable Sources */
+#tier3 li {
+  border: 7px solid orange;
+}
+
+/* Tier 4: Unreliable Sources */
+#tier4 li {
+  border: 7px solid red;
+}
+
+/* Animation for fade in and out */
+.fade-in {
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Crest styling */
+.crest {
+  width: 150px; /* Set crest width as desired */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
