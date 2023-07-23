@@ -22,9 +22,9 @@ p {
 }
 
 input[type="text"] {
-  width: 50vw; /* Set width to 50% of viewport width */
-  height: 30px;
-  font-size: large;
+  width: 80vw; /* Set width to 80% of viewport width for mobile */
+  height: 40px;
+  font-size: 20px; /* Increase font size for mobile */
   text-align: center;
   padding: 10px 20px;
   border: none;
@@ -33,7 +33,7 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-  width: 70vw; /* Set width to 70% of viewport width when focused */
+  width: 90vw; /* Set width to 90% of viewport width when focused for mobile */
 }
 
 /* Tiered columns */
@@ -41,7 +41,6 @@ ul {
   list-style: none;
   padding: 0;
   /* Add column layout */
-  column-count: 3;
   column-gap: 20px;
 }
 
@@ -51,6 +50,7 @@ ul li {
   border-radius: 5px;
   background-color: #022853;
   color: white;
+  font-size: 18px; /* Increase font size for mobile */
 }
 
 ul li::before {
@@ -106,10 +106,10 @@ h2 {
   width: 150px; /* Set crest width as desired */
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 20px; /* Add margin at the bottom to separate from search bar */
 }
 
-/* Media Queries for Mobile-Friendly Layout */
+/* Media Queries for Flexible Column Layout */
 
 /* For screens up to 768px wide (typical mobile and tablet size) */
 @media (max-width: 768px) {
@@ -118,8 +118,14 @@ h2 {
     column-count: 1;
   }
 
-  /* Adjust crest size for mobile */
-  .crest {
-    width: 100px;
+  /* Adjust the search bar width to full screen width for mobile */
+  input[type="text"] {
+    width: 100vw;
+  }
+
+  /* Adjust font size for mobile */
+  ul li,
+  input[type="text"] {
+    font-size: 24px;
   }
 }
