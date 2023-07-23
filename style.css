@@ -108,3 +108,18 @@ h2 {
   display: block;
   margin: 0 auto;
 }
+
+/* Media Queries for Mobile-Friendly Layout */
+
+/* For screens up to 768px wide (typical mobile and tablet size) */
+@media (max-width: 768px) {
+  /* Adjust the column count to 1 for single-column layout */
+  ul {
+    column-count: 1;
+  }
+
+  /* Adjust crest size for mobile */
+  .crest {
+    width: 100px;
+  }
+}
